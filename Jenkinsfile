@@ -17,8 +17,8 @@ pipeline {
             }
             post{
                 always{
-                    mail to: "s222262122@deakin.edu.au"
-                    subject: "Test Complete"
+                    mail to: "s222262122@deakin.edu.au",
+                    subject: "Test Complete",
                     body: "Logs attached above"
                 }
             }
@@ -34,8 +34,8 @@ pipeline {
             }
             post{
                 always{
-                    mail to: "s222262122@deakin.edu.au"
-                    subject: "Scan Complete"
+                    mail to: "s222262122@deakin.edu.au",
+                    subject: "Scan Complete",
                     body: "Logs attached above"
                 }
             }
