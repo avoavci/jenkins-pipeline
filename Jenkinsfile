@@ -20,7 +20,7 @@ pipeline {
                     mail to: "wallplanner7@gmail.com",
                     subject: "Test Complete",
                     body: "Logs attached above",
-                    attachlog: true
+                    attachLog: true
                 }
             }
         }
@@ -38,7 +38,7 @@ pipeline {
                     mail to: "wallplanner7@gmail.com",
                     subject: "Test Complete",
                     body: "Logs attached above",
-                    attachlog: true
+                    attachLog: true
                 }
             }
         }
