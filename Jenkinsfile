@@ -19,7 +19,6 @@ pipeline {
             post{
                 always{
                     mail to: "wallplanner7@gmail.com",
-                    archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true,
                     emailext attachLog: true, attachmentsPattern: 'generatedFile.txt',
                     subject: "Test Complete",
                     body: "Logs attached above"
@@ -38,7 +37,6 @@ pipeline {
             post{
                 always{
                     mail to: "wallplanner7@gmail.com",
-                    archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true,
                     emailext attachLog: true, attachmentsPattern: 'generatedFile.txt',
                     subject: "Scan Complete",
                     body: "Logs attached above"
