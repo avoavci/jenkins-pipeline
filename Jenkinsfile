@@ -17,10 +17,7 @@ pipeline {
             }
             post{
                 always{
-                    emailext body: 'Logs attached above',
-                    subject: 'Test Complete',
-                    to: 'wallplanner7@gmail.com',
-                    attachLog: true
+                    emailext attachLog: true, body: 'Logs attached above', subject: 'Test Complete', to: 'wallplanner7@gmail.com'
                 }
             }
         }
@@ -35,10 +32,7 @@ pipeline {
             }
             post{
                 always{
-                    emailext body: 'Logs attached above',
-                    subject: 'Test Complete',
-                    to: 'wallplanner7@gmail.com',
-                    attachLog: true
+                    emailext attachLog: true, body: 'Logs attached above', subject: 'Test Complete', to: 'wallplanner7@gmail.com'
                 }
             }
         }
