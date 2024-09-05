@@ -14,7 +14,6 @@ pipeline {
         stage('Test') { 
             steps {
                 echo "Running unit test and integration tests using Harness tool" 
-                sh 'echo "artifact file" > generatedFile.txt'
             }
             post{
                 always{
