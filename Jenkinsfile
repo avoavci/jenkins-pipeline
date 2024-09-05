@@ -15,10 +15,6 @@ pipeline {
             steps {
                 echo "Running unit test and integration tests using Harness tool" 
             }
-            post{
-                always{
-                    emailext attachLog: true, body: 'Logs attached above', subject: 'Test Complete', to: 'wallplanner7@gmail.com'
-                }
             }
         }
         stage('Code Analysis'){
