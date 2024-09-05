@@ -17,8 +17,10 @@ pipeline {
             }
             post{
                 always{
-                    emailext attachLog: true, body: "Logs attached above", compressLog: true,
-                    subject: "Scan Complete", to: 'wallplanner7@gmail.com'
+                    mail to: "wallplanner7@gmail.com",
+                    subject: "Test Complete",
+                    body: "Logs attached above",
+                    attachlog: true
                 }
             }
         }
@@ -33,8 +35,10 @@ pipeline {
             }
             post{
                 always{
-                    emailext attachLog: true, body: "Logs attached above", compressLog: true,
-                    subject: "Scan Complete", to: 'wallplanner7@gmail.com'
+                    mail to: "wallplanner7@gmail.com",
+                    subject: "Test Complete",
+                    body: "Logs attached above",
+                    attachlog: true
                 }
             }
         }
