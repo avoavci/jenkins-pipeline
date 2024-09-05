@@ -16,7 +16,6 @@ pipeline {
                 echo "Running unit test and integration tests using Harness tool" 
             }
             }
-        }
         stage('Code Analysis'){
             steps {
                 echo "Checking the quality of code using analysis to industry standard using Harness tool"
