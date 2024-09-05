@@ -14,10 +14,13 @@ pipeline {
         stage('Test') { 
             steps {
                 echo "Running unit test and integration tests using Harness tool" 
+                sh 'echo "artifact file" > generatedFile.txt'
             }
             post{
                 always{
+                    archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true,
                     mail to: "wallplanner7@gmail.com",
+                    emailext attachLog: true, attachmentsPattern: 'generatedFile.txt',
                     subject: "Test Complete",
                     body: "Logs attached above"
                 }
@@ -34,7 +37,9 @@ pipeline {
             }
             post{
                 always{
+                    archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true,
                     mail to: "wallplanner7@gmail.com",
+                    emailext attachLog: true, attachmentsPattern: 'generatedFile.txt',
                     subject: "Scan Complete",
                     body: "Logs attached above"
                 }
