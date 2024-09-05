@@ -18,10 +18,8 @@ pipeline {
             }
             post{
                 always{
-                    mail to: "wallplanner7@gmail.com",
-                    emailext attachLog: true, attachmentsPattern: 'generatedFile.txt',
-                    subject: "Test Complete",
-                    body: "Logs attached above"
+                    emailext attachLog: true, body: "Logs attached above", compressLog: true, replyTo: 'wallplanner7@gmail.com',
+                    subject: "Scan Complete", to: 'wallplanner7@gmail.com'
                 }
             }
         }
@@ -36,10 +34,8 @@ pipeline {
             }
             post{
                 always{
-                    mail to: "wallplanner7@gmail.com",
-                    emailext attachLog: true, attachmentsPattern: 'generatedFile.txt',
-                    subject: "Scan Complete",
-                    body: "Logs attached above"
+                    emailext attachLog: true, body: "Logs attached above", compressLog: true, replyTo: 'wallplanner7@gmail.com',
+                    subject: "Scan Complete", to: 'wallplanner7@gmail.com'
                 }
             }
         }
