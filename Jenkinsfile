@@ -17,10 +17,10 @@ pipeline {
             }
             post{
                 success{
-                    emailext attachLog: true, body: 'Logs attached above', subject: 'Scan Success', to: 'wallplanner7@gmail.com'
+                    emailext attachLog: true, body: 'Logs attached above', subject: 'Test Success', to: 'wallplanner7@gmail.com'
                 }
                 failure{
-                    emailext attachLog: true, body: 'Logs attached above', subject: 'Scan Failure', to: 'wallplanner7@gmail.com'
+                    emailext attachLog: true, body: 'Logs attached above', subject: 'Test Failure', to: 'wallplanner7@gmail.com'
                 }
             }
         }
