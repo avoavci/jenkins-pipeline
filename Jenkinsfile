@@ -23,6 +23,7 @@ pipeline {
                     emailext attachLog: true, body: 'Logs attached above', subject: 'Scan Failure', to: 'wallplanner7@gmail.com'
                 }
             }
+        }
         stage('Code Analysis'){
             steps {
                 echo "Checking the quality of code using analysis to industry standard using Harness tool"
