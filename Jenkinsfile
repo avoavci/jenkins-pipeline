@@ -15,6 +15,13 @@ pipeline {
             steps {
                 echo "Running unit test and integration tests using Harness tool" 
             }
+            post{
+                success{
+                    emailext attachLog: true, body: 'Logs attached above', subject: 'Scan Success', to: 'wallplanner7@gmail.com'
+                }
+                failure{
+                    emailext attachLog: true, body: 'Logs attached above', subject: 'Scan Failure', to: 'wallplanner7@gmail.com'
+                }
             }
         stage('Code Analysis'){
             steps {
@@ -26,8 +33,11 @@ pipeline {
                 echo "Using Snyk tool to check for vulnerabilities in code "
             }
             post{
-                always{
-                    emailext attachLog: true, body: 'Logs attached above', subject: 'Test Complete', to: 'wallplanner7@gmail.com'
+                success{
+                    emailext attachLog: true, body: 'Logs attached above', subject: 'Scan Success', to: 'wallplanner7@gmail.com'
+                }
+                failure{
+                    emailext attachLog: true, body: 'Logs attached above', subject: 'Scan Failure', to: 'wallplanner7@gmail.com'
                 }
             }
         }
